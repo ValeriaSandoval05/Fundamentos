@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    //Declarar variables
+    int a,b,r;
+    cout<<"Ingresa un valor:";
+    cin>>a;
+    cout<<"Ingresa un valor:";
+    cin>>b;
+    r=a+b;
+    
+    cout<<"La suma es:"<<r<<endl;
+    r=a-b;
+    cout<<"La resta es:"<<r<<endl;
+    r=a*b;
+    cout<<"La multiplicación es:"<<r<<endl;
+    r=a/b;
+    cout<<"La división es:"<<r<<endl;
+
+    return 0;
+}
