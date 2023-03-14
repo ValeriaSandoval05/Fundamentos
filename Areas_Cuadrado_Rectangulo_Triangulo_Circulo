@@ -13,3 +13,34 @@ int main()
     cout<<"El area del triangulo es "<<area;
     return 0;
 }
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float lado,area;
+    cout<<"Ingrese el lado del cuadrado: ";
+    cin>>lado;
+    area= lado*lado;
+    cout<<"El area del cuadrado es "<<area;
+    return 0;
+}
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float base, altura, area;
+    cout<<"Ingrese la base: ";
+    cin>>base;
+    cout<<"Ingrese la altura: ";
+    cin>>altura;
+    area= base*altura;
+    cout<<"El area del rectangulo es "<<area;
+    return 0;
+}
