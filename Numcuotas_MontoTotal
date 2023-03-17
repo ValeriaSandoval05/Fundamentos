@@ -1,0 +1,18 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int numcuotas;
+    float monto;
+    cout<<"Ingrese el numero de cuotas: ";
+    cin>>numcuotas;
+     cout<<"Ingrese el monto: ";
+     cin>>monto;
+     if((numcuotas>36)||(monto>2000))
+        cout<<"Valores no validos";
+    else
+        cout<<"El monto total es: "<<numcuotas*monto;
+    return 0;
+}
