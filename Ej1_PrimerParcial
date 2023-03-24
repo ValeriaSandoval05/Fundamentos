@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+   int cantidad;
+   float precio,total;
+   cout<<"Ingrese la cantidad: ";
+   cin>>cantidad;
+   cout<<"Ingrese el precio: ";
+   cin>>precio;
+   if (cantidad>=3)
+    total=(cantidad*precio)*0.8;
+   else
+    total=(cantidad*precio)*0.9;
+   cout<<"El total a pagar es: "<<total;
+    return 0;
+}
