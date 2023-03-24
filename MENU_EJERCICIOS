@@ -1,0 +1,59 @@
+#include <iostream>
+
+using namespace std;
+
+int
+main ()
+{
+    int opcion, cantidad;
+    float precio,total,presupuestoanual, ginecologia, traumatologia, pediatria, a, b, c, d, x;
+    cout<<"MENU"<<endl;
+    cout<<"1.Calcular el precio a pagar"<<endl;
+	cout<<"2. Calcular solucion unica"<<endl;
+	cout<<"3. Calcular presupuesto"<<endl;
+	cout<<"Ingresar opcion: ";
+	cin>>opcion;
+	if (opcion==1)
+	{
+	  cout<<"Ingrese la cantidad: ";
+	  cin>>cantidad;
+	  cout<<"Ingrese el precio: ";
+	  cin>>precio;
+	  if (cantidad>=3)
+	  total=(cantidad*precio)*0.8;
+	  else
+	  total=(cantidad*precio)*0.9;
+	  cout<<"El total a pagar es: "<<total;
+	}
+    else
+        if (opcion==2)
+        {
+        cout<<"Ingrese el monto anual: ";
+        cin>>presupuestoanual;
+        
+        ginecologia=presupuestoanual*0.4;
+        traumatologia=presupuestoanual*0.3;
+        pediatria=presupuestoanual*0.3;
+        
+        cout<<"Presupuesto asignado a ginecologia: "<<ginecologia<<endl;
+        cout<<"Presupuesto asignado a traumatologia: "<<ginecologia<<endl;
+        cout<<"Presupuesto asignado a pediatria: "<<ginecologia<<endl;
+        }
+        else
+            if (opcion==3)
+            {
+            cout<<"Ingrese a: ";
+            cin>>a;
+            cout<<"Ingrese b: ";
+            cin>>b;
+            cout<<"Ingrese c: ";
+            cin>>c;
+            d=((b*b)-4*a*c);
+            if (d==0) {
+            x= -b/(4*a);
+            cout<<("x: ")<<x<<endl;
+            } else
+            cout<<("La solucion no es unica")<<endl;
+            }
+return 0;
+}
