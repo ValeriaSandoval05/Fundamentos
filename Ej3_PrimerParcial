@@ -1,0 +1,19 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float presupuestoanual, ginecologia, traumatologia, pediatria;
+    cout<<"Ingrese el monto anual: ";
+    cin>>presupuestoanual;
+    
+    ginecologia=presupuestoanual*0.4;
+    traumatologia=presupuestoanual*0.3;
+    pediatria=presupuestoanual*0.3;
+    
+    cout<<"Presupuesto asignado a ginecologia: "<<ginecologia<<endl;
+    cout<<"Presupuesto asignado a traumatologia: "<<ginecologia<<endl;
+    cout<<"Presupuesto asignado a pediatria: "<<ginecologia<<endl;
+    return 0;
+}
