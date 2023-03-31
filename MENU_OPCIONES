@@ -1,0 +1,49 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int edad,N,suma=0,opcion;
+    float base, altura, area;
+    
+    do{
+    cout<<endl;
+    cout<<"\tMENU "<<endl; // \t es un tabulador
+    cout << "1.- Estructura secuencial" << endl;
+    cout << "2.- Estructura condicional" <<endl;
+    cout << "3.- Estructura repetitiva" <<endl;
+    cout<<"0.- Salir"<<endl;
+    cout <<"Elige una opcion: ";
+    cin>>opcion;
+    switch (opcion) {
+        case 1: cout<<"Ingrese la base: ";
+                cin>>base;
+                cout<<"Ingrese la altura: ";
+                cin>>altura;
+                area= base*altura/2;
+                cout<<"El area del triangulo es "<<area;
+	            break;
+	            
+        case 2: cout<<"Ingrese la edad: ";
+                cin>>edad;
+                if(edad>=18)
+                    cout<<"Es mayor de edad";
+                else
+                    cout<<"No es mayor de edad";
+	            break;
+        case 3: cout<<"Ingrese un valor entero para N: ";
+                cin>>N;
+                for (int i=1; i<=N; i+=2) {
+                    suma +=i;
+                }
+                cout<<"La suma de los numeros impares entre 1 y "<<N<<" es "<<suma<<endl;
+	            break;
+        case 0: cout<<"Salir"<<endl;
+                break;
+	    default: cout << "Opcion invalida" << endl;
+    }
+    
+    } while (opcion!=0);
+    return 0;
+}
