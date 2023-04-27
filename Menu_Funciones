@@ -1,0 +1,65 @@
+#include <iostream>
+
+using namespace std;
+
+float areaterreno(float l);
+int sumadigitos(int num);
+int preciopagar(int cant,float precio);
+
+int main()
+{
+    float precio,lado;
+    int numero,cant,opcion;
+    cout<<"\tMENU"<<endl;
+    cout<<"1.Calcular area terreno"<<endl;
+    cout<<"2.Calcular suma de digitos"<<endl;
+    cout<<"3.Calcular total a pagar"<<endl;
+    cout<<"Ingresar 0 para salir"<<endl;
+    cout<<"Eliga la opcion: ";
+    cin>>opcion;
+        switch (opcion) {
+            case 1: cout<<"ingrsar el lado del terreno: ";
+                cin>>lado;
+                cout<<"El area del terreno es "<<areaterreno(lado)<<endl;
+                break;
+            case 2: cout<<"Ingresar numero: ";
+                cin>>numero;
+                cout<<"La suma de sus digitos es: "<<sumadigitos(numero)<<endl;
+                break;
+            case 3: cout<<"Ingresar cantidad de camisas: ";
+                cin>>cant;
+                cout<<"Ingresar precio de cada camisa: ";
+                cin>>precio;
+                cout<<"El precio total a pagar es: "<<preciopagar(cant,precio);
+                break;
+            case 0:
+                break;
+            default: cout<<"Opcion invalida";
+        }
+    return 0;
+}
+
+float areaterreno(float l) {
+    float aux;
+    aux=l*l;
+    return aux;
+}
+
+int sumadigitos(int num) {
+    int dig,sum=0;
+    while (num>0) {
+        dig = num%10;
+        num=num/10;
+        sum=sum+dig;
+    }
+    return sum;
+}
+
+int preciopagar(int cant,float precio) {
+    float total;
+    if (cant >=3)
+        total=(cant*precio)*0.8;
+    else
+        total=(cant*precio)*0.9;
+    return total;
+}
