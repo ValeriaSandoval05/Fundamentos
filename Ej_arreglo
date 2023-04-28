@@ -1,0 +1,33 @@
+//Ejemplo arreglo
+#include <iostream>
+
+using namespace std;
+
+#define MAX 100
+
+double promedio(double a[], int tamanio);
+
+int main()
+{
+    int N; //N es el tamaño del vector
+    double vec[MAX];
+    do {
+        cout << "Ingrese el numero de elementos del vector: ";
+        cin >> N;
+    } while ((N <= 0) || (N > MAX));
+    for (int i= 0; i< N; i++)
+    {
+        cout << "Ingrese la nota " << i << ": ";
+        cin >> vec[i];
+
+    }
+    cout << "El promedio es: " << promedio(vec, N); //Esta es la llamada a la funcion
+}
+double promedio(double a[], int tamanio)
+{
+    double aux = 0;
+    for (int i = 0; i < tamanio; i++)
+        aux = aux + a[i];
+    aux = aux / tamanio;
+    return aux;
+}
