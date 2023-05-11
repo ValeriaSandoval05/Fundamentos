@@ -1,0 +1,94 @@
+#include <iostream>
+#define MAX 100
+
+using namespace std;
+
+void cargar(double vec[], int tamanio);
+void mostrar(double vec[], int tamanio);
+double promedio(double vec[], int tamanio);
+void burbuja(double vec[], int tamanio);
+bool busqueda(double vec[], int tamanio, double elemento);
+
+int main()
+{
+    int tam, opcion;
+    double vec[MAX], elemento;
+    do{
+        cout << "ingresar tamaño del vector: ";
+    cin >> tam;
+    } while ((tam <=0) || (tam > MAX));
+    do{
+    cout << "  MENU" << endl;
+    cout << "1.Cargar vector" << endl;
+    cout << "2.Mostrarr" << endl;
+    cout << "3.Promedio" << endl;
+    cout << "4.Ordenar burbuja" << endl;
+    cout << "5.Busqueda de elemento" << endl;
+    cout <<"0.Salir"<< endl;
+    cin >> opcion;
+    switch (opcion) {
+    case 1: cargar(vec, tam);
+        break;
+    case 3: cout << "El promedio es: " << promedio(vec, tam);
+        break;
+    case 2: mostrar(vec, tam);
+        break;
+    case 4:
+        burbuja(vec, tam);
+        break;
+    case 5:
+        cout << "Ingrese elemento a buscar: ";
+        cin >> elemento;
+        if (busqueda(vec, tam, elemento))
+            cout << "El elemento pertenece al vector" << endl;
+        else
+            cout << "El elemento no pertenece al vector" << endl;
+        break;
+    case 0:
+        break;
+    }
+    } while (opcion != 0);
+
+   
+}
+
+void cargar(double vec[], int tamanio) {
+    for (int i = 0; i < tamanio; i++) {
+        cout << "Ingrese vec [" << i << "]: ";
+        cin >> vec[i];
+    }
+}
+void mostrar(double vec[], int tamanio) {
+    cout << "[";
+    for (int i = 0; i < tamanio; i++) {
+        cout << vec[i] << ",";
+    }
+    cout << "]";
+}
+double promedio(double vec[], int tamanio) {
+    double suma = 0;
+    for (int i = 0; i < tamanio; i++) 
+        suma = suma + vec[i];
+     return suma / tamanio;
+}
+void burbuja(double vec[], int tamanio) {
+    double aux;
+    for (int i = 0; i < tamanio - 1; i++)
+        for (int j = i + 1;j< tamanio; j++) {
+            if (vec[i] > vec[j]) {
+                aux = vec[i];
+                vec[i] = vec[j];
+                vec[j] = aux;
+            }
+        }
+}
+bool busqueda(double vec[], int tamanio, double elemento) {
+    bool aux = false;
+    for (int i = 0; i < tamanio; i++) {
+        if (vec[i] == elemento) {
+            aux = true;
+            return aux;
+        }
+    }
+    return aux;
+}
