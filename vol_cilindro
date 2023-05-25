@@ -1,0 +1,21 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+void volumencilindro(float r,float h,float & v);
+
+int main()
+{
+    float radio,altura, volumen=0.0;
+    cout<<"ingresar radio: ";
+    cin>>radio;
+    cout<<"Ingresar altura: ";
+    cin>>altura;
+    volumencilindro(radio,altura,volumen);
+   cout<<"El volumen es: "<<volumen;
+}
+
+void volumencilindro(float r,float h,float & v) {
+    v=3.1416*pow(r,2)*h;
+}
