@@ -1,0 +1,58 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int a[5];
+    float sumaimpares=0;
+    int contadorimpares=0;
+    
+    for(int i=0;i<5;i++) {
+        cout<<"Cargar posicion"<<"<<["<<i<<"]: ";
+        cin>>a[i];
+    }
+    cout<<"Mostrando el vector...";
+    for (int i=0; i<5;i++) {
+            cout<<a[i]<<" ";
+    }
+    cout<<"\nMostrando solo numeros pares...";
+    for (int i=0; i<5;i++) {
+        if (a[i]%2==0)
+            cout<<a[i]<<" ";
+    }
+    cout<<"\nMostrando solo numeros impares...";
+    for (int i=0; i<5;i++) {
+        if (a[i]%2!=0) {
+            sumaimpares= sumaimpares+ a[i];
+            contadorimpares++;
+            cout<<a[i]<<" ";
+    }
+    cout<<"\nMostrando mayor...";
+    int mayor = a[0];
+    for (int i=0; i<5;i++) {
+        if (a[i]>mayor)
+            mayor=a[i];
+        }
+    }
+    cout<<"\nEl mayor es "<<mayor;
+    
+    cout<<"\nMostrando menor...";
+    int menor= a[0];
+    for (int i=1; i<5;i++) {
+        if (a[i]<menor){
+            menor=a[i];
+        }
+    }
+    cout<<"\nEl menor es "<<menor;
+    
+    cout<<"\nMostrando el promedio...";
+    int suma = 0;
+    for (int i=0; i<5;i++) {
+        suma = suma + a[i];
+    }
+    cout<<"\nEl promedio es "<<suma/5;
+    
+    cout<<"\nEl promedio de solo numeros impares es "<<sumaimpares/contadorimpares;
+    return 0;
+}
