@@ -1,0 +1,55 @@
+#include <iostream>
+using namespace std;
+
+const int MAX_FILAS = 100;
+const int MAX_COLUMNAS = 100;
+
+void sumaMatrices(int matriz1[][MAX_COLUMNAS], int matriz2[][MAX_COLUMNAS], int resultado[][MAX_COLUMNAS], int filas, int columnas) {
+    for (int i = 0; i < filas; i++) {
+        for (int j = 0; j < columnas; j++) {
+            resultado[i][j] = matriz1[i][j] + matriz2[i][j];
+        }
+    }
+}
+
+void imprimirMatriz(int matriz[][MAX_COLUMNAS], int filas, int columnas) {
+    for (int i = 0; i < filas; i++) {
+        for (int j = 0; j < columnas; j++) {
+            cout << matriz[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
+int main() {
+    int matriz1[MAX_FILAS][MAX_COLUMNAS];
+    int matriz2[MAX_FILAS][MAX_COLUMNAS];
+    int resultado[MAX_FILAS][MAX_COLUMNAS];
+    int filas, columnas;
+
+    cout << "Ingrese el número de filas de las matrices: ";
+    cin >> filas;
+    cout << "Ingrese el número de columnas de las matrices: ";
+    cin >> columnas;
+
+    cout << "Ingrese los elementos de la primera matriz:" << endl;
+    for (int i = 0; i < filas; i++) {
+        for (int j = 0; j < columnas; j++) {
+            cin >> matriz1[i][j];
+        }
+    }
+
+    cout << "Ingrese los elementos de la segunda matriz:" << endl;
+    for (int i = 0; i < filas; i++) {
+        for (int j = 0; j < columnas; j++) {
+            cin >> matriz2[i][j];
+        }
+    }
+
+    sumaMatrices(matriz1, matriz2, resultado, filas, columnas);
+
+    cout << "La matriz resultante es:" << endl;
+    imprimirMatriz(resultado, filas, columnas);
+
+    return 0;
+}
