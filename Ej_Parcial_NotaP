@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    int reg;
+    float p1,p2,numfal,pp,ef,nf,suma=0,c=0;
+    string nombre;
+    cout<<"Ingrese el numero de registro. Colocar 0 para terminar ";
+    cin>>reg;
+    while(reg!=0)
+    {
+        cin.ignore();
+       cout<<"Nombre: ";
+       getline(cin,nombre);//cin>>z;
+       cout<<"Parcial 1: ";
+       cin>>p1;
+       cout<<"Parcial 2: ";
+       cin>>p2;
+       cout<<"Nota practica: ";
+        cin>>pp;
+       cout<<"Examen final: ";
+        cin>>ef;
+        cout<<"Numero de faltas: ";
+        cin>>numfal;
+        if(numfal>(0.2*48))
+          ef=0;
+        
+        nf=((p1+p2)/2)*0.4+pp*0.2+ef*0.4;
+        suma=suma+nf;
+        c++;//contando el numero de estudiantes
+        cout<<nombre<<" tiene "<<nf;
+        cout<<"Ingrese el proximo nuemro de registro colocar 0 para terminar: ";
+        cin>>reg;
+        
+    }
+    return 0;
+}
