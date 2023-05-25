@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    int dia, mes, año;
+    cout << "Ingresa la fecha en formato DD MM AAAA: ";
+    cin >> dia >> mes >> año;
+
+    if ((mes == 3 && dia >= 21) || (mes > 3 && mes < 6) || (mes == 6 && dia < 21)) 
+    {
+        cout << "Es otoño" << endl;
+    } else 
+    if ((mes == 6 && dia >= 21) || (mes > 6 && mes < 9) || (mes == 9 && dia < 21)) 
+    {
+        cout << "Es invierno" << endl;
+    } else 
+    if ((mes == 9 && dia >= 21) || (mes > 9 && mes < 12) || (mes == 12 && dia < 21)) 
+    {
+        cout << "Es primavera" << endl;
+    } else 
+    {
+        cout << "Es verano" << endl;
+    }
+
+    return 0;
+}
